@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Palam-SVN] r11 - trunk/palam/docs
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/palam-svn/2005-October/index.html" >
+   <LINK REL="made" HREF="mailto:palam-svn%40lists.berlios.de?Subject=Re%3A%20%5BPalam-SVN%5D%20r11%20-%20trunk/palam/docs&In-Reply-To=%3C200510231033.j9NAXVMs032639%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000006.html">
+   <LINK REL="Next"  HREF="000007.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Palam-SVN] r11 - trunk/palam/docs</H1>
+    <B>Baishampayan Ghose at BerliOS</B> 
+    <A HREF="mailto:palam-svn%40lists.berlios.de?Subject=Re%3A%20%5BPalam-SVN%5D%20r11%20-%20trunk/palam/docs&In-Reply-To=%3C200510231033.j9NAXVMs032639%40sheep.berlios.de%3E"
+       TITLE="[Palam-SVN] r11 - trunk/palam/docs">ghoseb at berlios.de
+       </A><BR>
+    <I>Sun Oct 23 12:33:31 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000006.html">[Palam-SVN] devel list
+</A></li>
+        <LI>Next message: <A HREF="000007.html">[Palam-SVN] r12 - trunk/palam/docs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8">[ date ]</a>
+              <a href="thread.html#8">[ thread ]</a>
+              <a href="subject.html#8">[ subject ]</a>
+              <a href="author.html#8">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Author: ghoseb
+Date: 2005-10-23 12:33:29 +0200 (Sun, 23 Oct 2005)
+New Revision: 11
+
+Modified:
+   trunk/palam/docs/i18nspecs.txt
+Log:
+Initial draft proposal
+
+
+Modified: trunk/palam/docs/i18nspecs.txt
+===================================================================
+--- trunk/palam/docs/i18nspecs.txt	2005-10-23 01:57:45 UTC (rev 10)
++++ trunk/palam/docs/i18nspecs.txt	2005-10-23 10:33:29 UTC (rev 11)
+@@ -1,24 +1,56 @@
+ Web Based Translation / Translator Management Application
+ ---------------------------------------------------------
+ 
+-Features that we must have --
++We are looking at building a web based translator / translation
++management application. These days, i18n / l10n projects mostly get
++translations done from translators by exchanging PO files via Email
++which is not only slow, but also a very cumbersome process. It doesn't
++allow the project admin to track changes to the PO file and also has no
++scope to track contributions from a given translator. Moreover, with so
++many projects to be translated and so few people participating, it's
++impractical to translate most common strings automatically. There should
++also be a way to remember translations so as to save time in further
++translations and also assure a certain level of consistency of
++translations among all applications. The major issues that are being
++faced by most l10n groups today can be summarised as below --
+ 
+-* Web based translation
+-	-- Multi team
+-	-- Multi language
+-	-- Multi products
+-    
+-* Support for all types of keymaps
++* Lack of consistency among translations
++* Lack of any translation memory
++* Inefficient use of human resources
++* Lack of decent machine translation facilities
++* Lack of versioning information in translations
++* Mostly complicated translation tools
++* Desktop or web based apps are the only ways to do translation
++* Lack of a coordinated effort among different teams
++* There is no way to contribute in small parts
++* No easy way to get the PO files as and when required
++* No new contributors are coming up
++* The overall process of getting something translated is too long
+ 
+-isnt this browser based? as long as the keymaps produce the standard unicode strings, this is irrelevant
++To solve the above problems and to make the l10n work much smoother, we
++are proposing a web based application which will also act as a
++centralised repository of all Indic l10n work. It will act as the
++ultimate resource for all l10n volunteers. People will be able to
++contribute their translations in a very easy and user friendly way. The
++web based tool intends to achieve the following --
+ 
+-* Way to incorporate daily updates in the POT straight from upstream
+-  CVS/SVN
+-  
+-svn+trac
+-  
+-* There should be a way to download tarballs of all PO files
++* Act as a central repository of all Indic translations across all
++  products / languages.
++* Make the job of the translator much easier by providing a web based
++  interface.
++* Make reviewing easy by clearly separating the reviewed and unreviewed
++  messages [Once click access to unreviewed strings].
++* Make it easy for beginners to contribute to the IndLinux project.
++* Always provide up to date POT files by monitoring upstream changes.
++* Make sure translations are never lost.
++* Make it easy for new / small language teams to start translating.
++* Provide an email interface
++* Shorten the translation &lt;-&gt; review -&gt; commit process
+ 
+-please dump the contents of your original mail proposing the project here, and we can work on it
++TODO: Fix the text and add some more points [must write around 1k words].
+ 
+ 
++#	$Id i18nspecs.txt v 0.01$
++
++
++
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000006.html">[Palam-SVN] devel list
+</A></li>
+	<LI>Next message: <A HREF="000007.html">[Palam-SVN] r12 - trunk/palam/docs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8">[ date ]</a>
+              <a href="thread.html#8">[ thread ]</a>
+              <a href="subject.html#8">[ subject ]</a>
+              <a href="author.html#8">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/palam-svn">More information about the Palam-svn
+mailing list</a><br>
+</body></html>

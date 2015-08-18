@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Palam-SVN] r14 - trunk/palam/docs
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/palam-svn/2005-October/index.html" >
+   <LINK REL="made" HREF="mailto:palam-svn%40lists.berlios.de?Subject=Re%3A%20%5BPalam-SVN%5D%20r14%20-%20trunk/palam/docs&In-Reply-To=%3C200510260441.j9Q4fl21009267%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000009.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Palam-SVN] r14 - trunk/palam/docs</H1>
+    <B>kenneth gonsalves at BerliOS</B> 
+    <A HREF="mailto:palam-svn%40lists.berlios.de?Subject=Re%3A%20%5BPalam-SVN%5D%20r14%20-%20trunk/palam/docs&In-Reply-To=%3C200510260441.j9Q4fl21009267%40sheep.berlios.de%3E"
+       TITLE="[Palam-SVN] r14 - trunk/palam/docs">lawgon at berlios.de
+       </A><BR>
+    <I>Wed Oct 26 06:41:47 CEST 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000009.html">[Palam-SVN] r13 - trunk/palam/docs
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Author: lawgon
+Date: 2005-10-26 06:41:44 +0200 (Wed, 26 Oct 2005)
+New Revision: 14
+
+Modified:
+   trunk/palam/docs/2005-10-25-ircmeet.txt
+Log:
+some additions to the discussion
+
+Modified: trunk/palam/docs/2005-10-25-ircmeet.txt
+===================================================================
+--- trunk/palam/docs/2005-10-25-ircmeet.txt	2005-10-25 15:09:08 UTC (rev 13)
++++ trunk/palam/docs/2005-10-25-ircmeet.txt	2005-10-26 04:41:44 UTC (rev 14)
+@@ -36,4 +36,15 @@
+ code to do the keymaps and integrate with our app. We'll acknowledge
+ Entrans as the source of that code.  
+   
+-  
++We have to state why we are doing a separate project and not joining an existing one:
++rosetta: not free
++pootle: in python, but no rdbms backend, so will not scale wordforge site itself seems to be broken.
++entrans: i personaly cannot join it as the languages are php and mysql. On the other hand it is an indian project with committed indian developers on it. We are also planning to use some of their javascript code. On the other hand, there is no project description so i dont know what they are planning.
++
++What software are we going to use and why?
++
++django and postgresql which also needs apache and modpython
++
++storage of pot and po files in the rdbms or on the filesystem? django stores files and images on the filesystem with the path to the file in the database (default behaviour)
++
++can we use trac+svn in any manner?
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000009.html">[Palam-SVN] r13 - trunk/palam/docs
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/palam-svn">More information about the Palam-svn
+mailing list</a><br>
+</body></html>

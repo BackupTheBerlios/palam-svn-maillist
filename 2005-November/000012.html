@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Palam-SVN] r16 - trunk/palam/docs
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/palam-svn/2005-November/index.html" >
+   <LINK REL="made" HREF="mailto:palam-svn%40lists.berlios.de?Subject=Re%3A%20%5BPalam-SVN%5D%20r16%20-%20trunk/palam/docs&In-Reply-To=%3C200511081105.jA8B5pBH021833%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000011.html">
+   <LINK REL="Next"  HREF="000013.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Palam-SVN] r16 - trunk/palam/docs</H1>
+    <B>kenneth gonsalves at BerliOS</B> 
+    <A HREF="mailto:palam-svn%40lists.berlios.de?Subject=Re%3A%20%5BPalam-SVN%5D%20r16%20-%20trunk/palam/docs&In-Reply-To=%3C200511081105.jA8B5pBH021833%40sheep.berlios.de%3E"
+       TITLE="[Palam-SVN] r16 - trunk/palam/docs">lawgon at berlios.de
+       </A><BR>
+    <I>Tue Nov  8 12:05:51 CET 2005</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000011.html">[Palam-SVN] r15 - trunk/palam/docs
+</A></li>
+        <LI>Next message: <A HREF="000013.html">[Palam-SVN] r17 - trunk/palam/docs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12">[ date ]</a>
+              <a href="thread.html#12">[ thread ]</a>
+              <a href="subject.html#12">[ subject ]</a>
+              <a href="author.html#12">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Author: lawgon
+Date: 2005-11-08 12:05:51 +0100 (Tue, 08 Nov 2005)
+New Revision: 16
+
+Added:
+   trunk/palam/docs/proposal.txt
+Log:
+half of the proposal
+
+Added: trunk/palam/docs/proposal.txt
+===================================================================
+--- trunk/palam/docs/proposal.txt	2005-11-07 16:36:03 UTC (rev 15)
++++ trunk/palam/docs/proposal.txt	2005-11-08 11:05:51 UTC (rev 16)
+@@ -0,0 +1,86 @@
++Proposal for an Integrated Translation Management Application
++
++Synopsis: 
++
++Translation of open source applications - like open source
++applications themselves, depend on the whims of would-be translators. There
++is a need for an application that will both cater to the need of individual
++translators to 'scratch their itch' and translate as much as they want of
++portions they want and at the same time allow the application developer to
++coordinate the efforts of individuals and maintain an adequate level of
++accuracy and consistency. 
++
++The application should cater to both sporadic or
++'one-off' online translation efforts and more consistent off-line efforts.
++
++In addition the application should build a basic database of strings with
++translations in the languages catered to - and offer either automatic
++translation of strings already in the database, or hints for already
++translated strings.
++
++The application should, at a later stage cater to translation of
++documentation - which has to be served to the translator para or section
++wise unlike translation of source which is served string by string.
++
++It goes without saying that the application should be free software,
++multiplatform and multilingual. It is also clear that any such application
++has to be web based.
++
++Existing efforts:
++
++We have investigated Rosetta, Pootle and Entrans (put the URLs). Rosetta is
++proprietory software. Pootle, written in python has the idea correct, but
++it uses a filesystem to store everything and probably wont scale. Entrans
++uses php and mysql, which we feel are not stable or secure enough for an
++application of this nature - and from the documentation does not appear to
++have the comprehensive aims of this project. However elements of it's user
++interface are good and could be incorporated into this project.
++
++Platform:
++
++We propose using the Python scripting language with Postgresql RDBMS as a
++backend. The webserver will be Apache. We will be using other tools and
++frameworks not limited to django, subversion, plone and trac for scripting
++various parts of the project. Both Python and Postgresql are stable, mature and
++inherently secure and used worldwide on an immense range of products and
++applications. Further, python being an easy to master scripting language,
++more non-technical people will be encouraged to hack at and contribute to
++the project.
++
++
++
++
++
++
++
++* Statistics -- Must have  
++
++* Online Review -- Must have
++
++* Consistency Checking -- Must have
++
++* Version Control -- A basic form of VC should be there, nothing too
++  ambitious, but there will be a way to mark a PO file to be a part of x
++  version of y app while uploading. The app will in any case treat PO
++  files of different version as separate files. So in a way, the VC will
++  be at a higher level than the app itself
++
++* User Profiles -- Unnecessary
++
++* Management Console -- Not needed as volunteers will be able to take up
++  work via the stats page itself
++
++* Downloads -- A way to filter translations according to language,
++  product, etc. and download tarballs
++
++* Minor Points
++  -- Translated UI
++  -- Extensive Online Documentation
++  -- Email Interface
++  -- Screenshot Gallery (?)
++
++* TODO -- Think of more features to put in  
++
++
++
++
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000011.html">[Palam-SVN] r15 - trunk/palam/docs
+</A></li>
+	<LI>Next message: <A HREF="000013.html">[Palam-SVN] r17 - trunk/palam/docs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12">[ date ]</a>
+              <a href="thread.html#12">[ thread ]</a>
+              <a href="subject.html#12">[ subject ]</a>
+              <a href="author.html#12">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/palam-svn">More information about the Palam-svn
+mailing list</a><br>
+</body></html>

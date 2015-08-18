@@ -1,0 +1,436 @@
+From lawgon at thenilgiris.com  Sat Oct 22 10:55:12 2005
+From: lawgon at thenilgiris.com (Kenneth Gonsalves)
+Date: Sat, 22 Oct 2005 14:25:12 +0530
+Subject: [Palam-svn] test
+Message-ID: <200510221425.12761.lawgon@thenilgiris.com>
+
+-- 
+regards
+kg
+
+http://www.livejournal.com/users/lawgon
+tally ho! http://avsap.org.in
+?????????? ?????!
+
+
+From ghoseb at berlios.de  Sat Oct 22 16:29:27 2005
+From: ghoseb at berlios.de (Baishampayan Ghose at BerliOS)
+Date: Sat, 22 Oct 2005 16:29:27 +0200
+Subject: [Palam-svn] r6 - trunk/palam/docs
+Message-ID: <200510221429.j9METRww014667@sheep.berlios.de>
+
+Author: ghoseb
+Date: 2005-10-22 16:29:27 +0200 (Sat, 22 Oct 2005)
+New Revision: 6
+
+Added:
+   trunk/palam/docs/i18nspecs.txt
+Log:
+Importing the i18nspecs
+
+Added: trunk/palam/docs/i18nspecs.txt
+===================================================================
+--- trunk/palam/docs/i18nspecs.txt	2005-10-22 10:26:53 UTC (rev 5)
++++ trunk/palam/docs/i18nspecs.txt	2005-10-22 14:29:27 UTC (rev 6)
+@@ -0,0 +1,4 @@
++Web Based Translation / Translator Management Application
++---------------------------------------------------------
++
++
+
+
+
+From ghoseb at berlios.de  Sat Oct 22 16:46:26 2005
+From: ghoseb at berlios.de (Baishampayan Ghose at BerliOS)
+Date: Sat, 22 Oct 2005 16:46:26 +0200
+Subject: [Palam-SVN] r7 - trunk/palam/docs
+Message-ID: <200510221446.j9MEkQ6D015698@sheep.berlios.de>
+
+Author: ghoseb
+Date: 2005-10-22 16:46:25 +0200 (Sat, 22 Oct 2005)
+New Revision: 7
+
+Modified:
+   trunk/palam/docs/i18nspecs.txt
+Log:
+Added a few lines
+
+Modified: trunk/palam/docs/i18nspecs.txt
+===================================================================
+--- trunk/palam/docs/i18nspecs.txt	2005-10-22 14:29:27 UTC (rev 6)
++++ trunk/palam/docs/i18nspecs.txt	2005-10-22 14:46:25 UTC (rev 7)
+@@ -1,4 +1,13 @@
+ Web Based Translation / Translator Management Application
+ ---------------------------------------------------------
+ 
++Features that we must have --
+ 
++* Web based translation
++	-- Multi team
++	-- Multi language
++	-- Multi products
++* Support for all types of keymaps
++* Way to incorporate daily updates in the POT straight from upstream CVS/SVN
++* 
++
+
+
+
+From ghoseb at berlios.de  Sat Oct 22 17:08:30 2005
+From: ghoseb at berlios.de (Baishampayan Ghose at BerliOS)
+Date: Sat, 22 Oct 2005 17:08:30 +0200
+Subject: [Palam-SVN] r8 - trunk/palam/docs
+Message-ID: <200510221508.j9MF8UgP017515@sheep.berlios.de>
+
+Author: ghoseb
+Date: 2005-10-22 17:08:29 +0200 (Sat, 22 Oct 2005)
+New Revision: 8
+
+Modified:
+   trunk/palam/docs/i18nspecs.txt
+Log:
+Adding one more line.
+
+
+Modified: trunk/palam/docs/i18nspecs.txt
+===================================================================
+--- trunk/palam/docs/i18nspecs.txt	2005-10-22 14:46:25 UTC (rev 7)
++++ trunk/palam/docs/i18nspecs.txt	2005-10-22 15:08:29 UTC (rev 8)
+@@ -7,7 +7,11 @@
+ 	-- Multi team
+ 	-- Multi language
+ 	-- Multi products
++    
+ * Support for all types of keymaps
+-* Way to incorporate daily updates in the POT straight from upstream CVS/SVN
+-* 
+ 
++* Way to incorporate daily updates in the POT straight from upstream
++  CVS/SVN
++  
++* There should be a way to download tarballs of all PO files
++
+
+
+
+From ghoseb at berlios.de  Sat Oct 22 17:12:06 2005
+From: ghoseb at berlios.de (Baishampayan Ghose at BerliOS)
+Date: Sat, 22 Oct 2005 17:12:06 +0200
+Subject: [Palam-SVN] r9 - trunk/palam/docs
+Message-ID: <200510221512.j9MFC6ET017780@sheep.berlios.de>
+
+Author: ghoseb
+Date: 2005-10-22 17:12:06 +0200 (Sat, 22 Oct 2005)
+New Revision: 9
+
+Modified:
+   trunk/palam/docs/i18nspecs.txt
+Log:
+Emacs rocks my world!
+
+
+Modified: trunk/palam/docs/i18nspecs.txt
+===================================================================
+--- trunk/palam/docs/i18nspecs.txt	2005-10-22 15:08:29 UTC (rev 8)
++++ trunk/palam/docs/i18nspecs.txt	2005-10-22 15:12:06 UTC (rev 9)
+@@ -15,3 +15,4 @@
+   
+ * There should be a way to download tarballs of all PO files
+ 
++
+
+
+
+From lawgon at berlios.de  Sun Oct 23 03:57:47 2005
+From: lawgon at berlios.de (kenneth gonsalves at BerliOS)
+Date: Sun, 23 Oct 2005 03:57:47 +0200
+Subject: [Palam-SVN] r10 - trunk/palam/docs
+Message-ID: <200510230157.j9N1vlcS006214@sheep.berlios.de>
+
+Author: lawgon
+Date: 2005-10-23 03:57:45 +0200 (Sun, 23 Oct 2005)
+New Revision: 10
+
+Modified:
+   trunk/palam/docs/i18nspecs.txt
+Log:
+changes to i18n specs
+
+Modified: trunk/palam/docs/i18nspecs.txt
+===================================================================
+--- trunk/palam/docs/i18nspecs.txt	2005-10-22 15:12:06 UTC (rev 9)
++++ trunk/palam/docs/i18nspecs.txt	2005-10-23 01:57:45 UTC (rev 10)
+@@ -10,9 +10,15 @@
+     
+ * Support for all types of keymaps
+ 
++isnt this browser based? as long as the keymaps produce the standard unicode strings, this is irrelevant
++
+ * Way to incorporate daily updates in the POT straight from upstream
+   CVS/SVN
+   
++svn+trac
++  
+ * There should be a way to download tarballs of all PO files
+ 
++please dump the contents of your original mail proposing the project here, and we can work on it
+ 
++
+
+
+
+From lawgon at thenilgiris.com  Sun Oct 23 04:15:55 2005
+From: lawgon at thenilgiris.com (Kenneth Gonsalves)
+Date: Sun, 23 Oct 2005 07:45:55 +0530
+Subject: [Palam-SVN] devel list
+Message-ID: <200510230745.55916.lawgon@thenilgiris.com>
+
+hi
+please set up a palam-devel list. add my name also (use nilgiris.com 
+mail id). How did you get the automatic mail of changes to work? I 
+tried but couldnt
+-- 
+regards
+kg
+
+http://www.livejournal.com/users/lawgon
+tally ho! http://avsap.org.in
+?????????? ?????!
+
+
+From ghoseb at berlios.de  Sun Oct 23 12:39:55 2005
+From: ghoseb at berlios.de (Baishampayan Ghose at BerliOS)
+Date: Sun, 23 Oct 2005 12:39:55 +0200
+Subject: [Palam-SVN] r12 - trunk/palam/docs
+Message-ID: <200510231039.j9NAdtDC007390@sheep.berlios.de>
+
+Author: ghoseb
+Date: 2005-10-23 12:39:48 +0200 (Sun, 23 Oct 2005)
+New Revision: 12
+
+Modified:
+   trunk/palam/docs/i18nspecs.txt
+Log:
+Added a few more lines to the TODO
+
+
+Modified: trunk/palam/docs/i18nspecs.txt
+===================================================================
+--- trunk/palam/docs/i18nspecs.txt	2005-10-23 10:33:29 UTC (rev 11)
++++ trunk/palam/docs/i18nspecs.txt	2005-10-23 10:39:48 UTC (rev 12)
+@@ -47,10 +47,10 @@
+ * Provide an email interface
+ * Shorten the translation <-> review -> commit process
+ 
+-TODO: Fix the text and add some more points [must write around 1k words].
++TODO: Fix the text and add some more points [must write around 1k
++words]. We also need to highlight translator management features, like
++how it will manage multiple teams of translators, do versioning of
++translations, etc. We also need to take a look at the features of
++Rosetta [http://lauchpad.net/rosetta] & Pootle
++[http://pootle.wordforge.org] and see which  of the good features we need.
+ 
+-
+-#	$Id i18nspecs.txt v 0.01$
+-
+-
+-
+
+
+
+From ghoseb at berlios.de  Sun Oct 23 12:33:31 2005
+From: ghoseb at berlios.de (Baishampayan Ghose at BerliOS)
+Date: Sun, 23 Oct 2005 12:33:31 +0200
+Subject: [Palam-SVN] r11 - trunk/palam/docs
+Message-ID: <200510231033.j9NAXVMs032639@sheep.berlios.de>
+
+Author: ghoseb
+Date: 2005-10-23 12:33:29 +0200 (Sun, 23 Oct 2005)
+New Revision: 11
+
+Modified:
+   trunk/palam/docs/i18nspecs.txt
+Log:
+Initial draft proposal
+
+
+Modified: trunk/palam/docs/i18nspecs.txt
+===================================================================
+--- trunk/palam/docs/i18nspecs.txt	2005-10-23 01:57:45 UTC (rev 10)
++++ trunk/palam/docs/i18nspecs.txt	2005-10-23 10:33:29 UTC (rev 11)
+@@ -1,24 +1,56 @@
+ Web Based Translation / Translator Management Application
+ ---------------------------------------------------------
+ 
+-Features that we must have --
++We are looking at building a web based translator / translation
++management application. These days, i18n / l10n projects mostly get
++translations done from translators by exchanging PO files via Email
++which is not only slow, but also a very cumbersome process. It doesn't
++allow the project admin to track changes to the PO file and also has no
++scope to track contributions from a given translator. Moreover, with so
++many projects to be translated and so few people participating, it's
++impractical to translate most common strings automatically. There should
++also be a way to remember translations so as to save time in further
++translations and also assure a certain level of consistency of
++translations among all applications. The major issues that are being
++faced by most l10n groups today can be summarised as below --
+ 
+-* Web based translation
+-	-- Multi team
+-	-- Multi language
+-	-- Multi products
+-    
+-* Support for all types of keymaps
++* Lack of consistency among translations
++* Lack of any translation memory
++* Inefficient use of human resources
++* Lack of decent machine translation facilities
++* Lack of versioning information in translations
++* Mostly complicated translation tools
++* Desktop or web based apps are the only ways to do translation
++* Lack of a coordinated effort among different teams
++* There is no way to contribute in small parts
++* No easy way to get the PO files as and when required
++* No new contributors are coming up
++* The overall process of getting something translated is too long
+ 
+-isnt this browser based? as long as the keymaps produce the standard unicode strings, this is irrelevant
++To solve the above problems and to make the l10n work much smoother, we
++are proposing a web based application which will also act as a
++centralised repository of all Indic l10n work. It will act as the
++ultimate resource for all l10n volunteers. People will be able to
++contribute their translations in a very easy and user friendly way. The
++web based tool intends to achieve the following --
+ 
+-* Way to incorporate daily updates in the POT straight from upstream
+-  CVS/SVN
+-  
+-svn+trac
+-  
+-* There should be a way to download tarballs of all PO files
++* Act as a central repository of all Indic translations across all
++  products / languages.
++* Make the job of the translator much easier by providing a web based
++  interface.
++* Make reviewing easy by clearly separating the reviewed and unreviewed
++  messages [Once click access to unreviewed strings].
++* Make it easy for beginners to contribute to the IndLinux project.
++* Always provide up to date POT files by monitoring upstream changes.
++* Make sure translations are never lost.
++* Make it easy for new / small language teams to start translating.
++* Provide an email interface
++* Shorten the translation <-> review -> commit process
+ 
+-please dump the contents of your original mail proposing the project here, and we can work on it
++TODO: Fix the text and add some more points [must write around 1k words].
+ 
+ 
++#	$Id i18nspecs.txt v 0.01$
++
++
++
+
+
+
+From ghoseb at berlios.de  Tue Oct 25 17:09:09 2005
+From: ghoseb at berlios.de (Baishampayan Ghose at BerliOS)
+Date: Tue, 25 Oct 2005 17:09:09 +0200
+Subject: [Palam-SVN] r13 - trunk/palam/docs
+Message-ID: <200510251509.j9PF99s7030811@sheep.berlios.de>
+
+Author: ghoseb
+Date: 2005-10-25 17:09:08 +0200 (Tue, 25 Oct 2005)
+New Revision: 13
+
+Added:
+   trunk/palam/docs/2005-10-25-ircmeet.txt
+Log:
+Adding the IRC meet minutes
+
+Added: trunk/palam/docs/2005-10-25-ircmeet.txt
+===================================================================
+--- trunk/palam/docs/2005-10-25-ircmeet.txt	2005-10-23 10:39:48 UTC (rev 12)
++++ trunk/palam/docs/2005-10-25-ircmeet.txt	2005-10-25 15:09:08 UTC (rev 13)
+@@ -0,0 +1,39 @@
++After an IRC meet on Tue Oct 25, 2005 we reached a genral consensus on
++the following features --
++
++* Whether we will write an application or provide a service to the
++  people -- To be decided later
++
++* Statistics -- Must have  
++
++* Online Review -- Must have
++
++* Consistency Checking -- Must have
++
++* Version Control -- A basic form of VC should be there, nothing too
++  ambitious, but there will be a way to mark a PO file to be a part of x
++  version of y app while uploading. The app will in any case treat PO
++  files of different version as separate files. So in a way, the VC will
++  be at a higher level than the app itself
++
++* User Profiles -- Unnecessary
++
++* Management Console -- Not needed as volunteers will be able to take up
++  work via the stats page itself
++
++* Downloads -- A way to filter translations according to language,
++  product, etc. and download tarballs
++
++* Minor Points
++  -- Translated UI
++  -- Extensive Online Documentation
++  -- Email Interface
++  -- Screenshot Gallery (?)
++
++* TODO -- Think of more features to put in  
++
++It was also decided that we will try to hack on the Entrans JavaScript
++code to do the keymaps and integrate with our app. We'll acknowledge
++Entrans as the source of that code.  
++  
++  
+
+
+
+From lawgon at berlios.de  Wed Oct 26 06:41:47 2005
+From: lawgon at berlios.de (kenneth gonsalves at BerliOS)
+Date: Wed, 26 Oct 2005 06:41:47 +0200
+Subject: [Palam-SVN] r14 - trunk/palam/docs
+Message-ID: <200510260441.j9Q4fl21009267@sheep.berlios.de>
+
+Author: lawgon
+Date: 2005-10-26 06:41:44 +0200 (Wed, 26 Oct 2005)
+New Revision: 14
+
+Modified:
+   trunk/palam/docs/2005-10-25-ircmeet.txt
+Log:
+some additions to the discussion
+
+Modified: trunk/palam/docs/2005-10-25-ircmeet.txt
+===================================================================
+--- trunk/palam/docs/2005-10-25-ircmeet.txt	2005-10-25 15:09:08 UTC (rev 13)
++++ trunk/palam/docs/2005-10-25-ircmeet.txt	2005-10-26 04:41:44 UTC (rev 14)
+@@ -36,4 +36,15 @@
+ code to do the keymaps and integrate with our app. We'll acknowledge
+ Entrans as the source of that code.  
+   
+-  
++We have to state why we are doing a separate project and not joining an existing one:
++rosetta: not free
++pootle: in python, but no rdbms backend, so will not scale wordforge site itself seems to be broken.
++entrans: i personaly cannot join it as the languages are php and mysql. On the other hand it is an indian project with committed indian developers on it. We are also planning to use some of their javascript code. On the other hand, there is no project description so i dont know what they are planning.
++
++What software are we going to use and why?
++
++django and postgresql which also needs apache and modpython
++
++storage of pot and po files in the rdbms or on the filesystem? django stores files and images on the filesystem with the path to the file in the database (default behaviour)
++
++can we use trac+svn in any manner?
+
+
+

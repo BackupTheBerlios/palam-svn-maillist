@@ -1,0 +1,857 @@
+From ghoseb at berlios.de  Mon Nov  7 17:36:03 2005
+From: ghoseb at berlios.de (Baishampayan Ghose at BerliOS)
+Date: Mon, 7 Nov 2005 17:36:03 +0100
+Subject: [Palam-SVN] r15 - trunk/palam/docs
+Message-ID: <200511071636.jA7Ga3eE014112@sheep.berlios.de>
+
+Author: ghoseb
+Date: 2005-11-07 17:36:03 +0100 (Mon, 07 Nov 2005)
+New Revision: 15
+
+Modified:
+   trunk/palam/docs/2005-10-25-ircmeet.txt
+Log:
+Adding my own comments
+
+
+Modified: trunk/palam/docs/2005-10-25-ircmeet.txt
+===================================================================
+--- trunk/palam/docs/2005-10-25-ircmeet.txt	2005-10-26 04:41:44 UTC (rev 14)
++++ trunk/palam/docs/2005-10-25-ircmeet.txt	2005-11-07 16:36:03 UTC (rev 15)
+@@ -34,17 +34,31 @@
+ 
+ It was also decided that we will try to hack on the Entrans JavaScript
+ code to do the keymaps and integrate with our app. We'll acknowledge
+-Entrans as the source of that code.  
++Entrans as the source of that code.
+   
+-We have to state why we are doing a separate project and not joining an existing one:
+-rosetta: not free
+-pootle: in python, but no rdbms backend, so will not scale wordforge site itself seems to be broken.
+-entrans: i personaly cannot join it as the languages are php and mysql. On the other hand it is an indian project with committed indian developers on it. We are also planning to use some of their javascript code. On the other hand, there is no project description so i dont know what they are planning.
++We have to state why we are doing a separate project and not joining an
++existing one: rosetta: not free pootle: in python, but no rdbms backend,
++so will not scale wordforge site itself seems to be broken.
+ 
++entrans: i personaly cannot join it as the languages are php and
++mysql. On the other hand it is an indian project with committed indian
++developers on it. We are also planning to use some of their javascript
++code. On the other hand, there is no project description so i dont know
++what they are planning.
++
+ What software are we going to use and why?
++-- We'll of course use Django + PostgreSQL [+Apache/mod_python]
+ 
+-django and postgresql which also needs apache and modpython
++storage of pot and po files in the rdbms or on the filesystem?
+ 
+-storage of pot and po files in the rdbms or on the filesystem? django stores files and images on the filesystem with the path to the file in the database (default behaviour)
++django stores files and images on the filesystem with the path to the
++file in the database (default behaviour)
++-- We'll have to hack Django in such a way that we can store the
++POTfiles in the DB itself and not just the paths. [I guess it's very
++easily achievable since the PO file contains are part of the Model in
++any way]
+ 
+-can we use trac+svn in any manner?
++Can we use trac+svn in any manner?
++-- We'll have to investigate that, as I don't know anything about that
++at the moment. But if trac has a pluggable API which we can hook into
++via Django, then of course, why not?
+
+
+
+From lawgon at berlios.de  Tue Nov  8 12:05:51 2005
+From: lawgon at berlios.de (kenneth gonsalves at BerliOS)
+Date: Tue, 8 Nov 2005 12:05:51 +0100
+Subject: [Palam-SVN] r16 - trunk/palam/docs
+Message-ID: <200511081105.jA8B5pBH021833@sheep.berlios.de>
+
+Author: lawgon
+Date: 2005-11-08 12:05:51 +0100 (Tue, 08 Nov 2005)
+New Revision: 16
+
+Added:
+   trunk/palam/docs/proposal.txt
+Log:
+half of the proposal
+
+Added: trunk/palam/docs/proposal.txt
+===================================================================
+--- trunk/palam/docs/proposal.txt	2005-11-07 16:36:03 UTC (rev 15)
++++ trunk/palam/docs/proposal.txt	2005-11-08 11:05:51 UTC (rev 16)
+@@ -0,0 +1,86 @@
++Proposal for an Integrated Translation Management Application
++
++Synopsis: 
++
++Translation of open source applications - like open source
++applications themselves, depend on the whims of would-be translators. There
++is a need for an application that will both cater to the need of individual
++translators to 'scratch their itch' and translate as much as they want of
++portions they want and at the same time allow the application developer to
++coordinate the efforts of individuals and maintain an adequate level of
++accuracy and consistency. 
++
++The application should cater to both sporadic or
++'one-off' online translation efforts and more consistent off-line efforts.
++
++In addition the application should build a basic database of strings with
++translations in the languages catered to - and offer either automatic
++translation of strings already in the database, or hints for already
++translated strings.
++
++The application should, at a later stage cater to translation of
++documentation - which has to be served to the translator para or section
++wise unlike translation of source which is served string by string.
++
++It goes without saying that the application should be free software,
++multiplatform and multilingual. It is also clear that any such application
++has to be web based.
++
++Existing efforts:
++
++We have investigated Rosetta, Pootle and Entrans (put the URLs). Rosetta is
++proprietory software. Pootle, written in python has the idea correct, but
++it uses a filesystem to store everything and probably wont scale. Entrans
++uses php and mysql, which we feel are not stable or secure enough for an
++application of this nature - and from the documentation does not appear to
++have the comprehensive aims of this project. However elements of it's user
++interface are good and could be incorporated into this project.
++
++Platform:
++
++We propose using the Python scripting language with Postgresql RDBMS as a
++backend. The webserver will be Apache. We will be using other tools and
++frameworks not limited to django, subversion, plone and trac for scripting
++various parts of the project. Both Python and Postgresql are stable, mature and
++inherently secure and used worldwide on an immense range of products and
++applications. Further, python being an easy to master scripting language,
++more non-technical people will be encouraged to hack at and contribute to
++the project.
++
++
++
++
++
++
++
++* Statistics -- Must have  
++
++* Online Review -- Must have
++
++* Consistency Checking -- Must have
++
++* Version Control -- A basic form of VC should be there, nothing too
++  ambitious, but there will be a way to mark a PO file to be a part of x
++  version of y app while uploading. The app will in any case treat PO
++  files of different version as separate files. So in a way, the VC will
++  be at a higher level than the app itself
++
++* User Profiles -- Unnecessary
++
++* Management Console -- Not needed as volunteers will be able to take up
++  work via the stats page itself
++
++* Downloads -- A way to filter translations according to language,
++  product, etc. and download tarballs
++
++* Minor Points
++  -- Translated UI
++  -- Extensive Online Documentation
++  -- Email Interface
++  -- Screenshot Gallery (?)
++
++* TODO -- Think of more features to put in  
++
++
++
++
+
+
+
+From lawgon at berlios.de  Tue Nov  8 12:29:29 2005
+From: lawgon at berlios.de (kenneth gonsalves at BerliOS)
+Date: Tue, 8 Nov 2005 12:29:29 +0100
+Subject: [Palam-SVN] r17 - trunk/palam/docs
+Message-ID: <200511081129.jA8BTTbe023756@sheep.berlios.de>
+
+Author: lawgon
+Date: 2005-11-08 12:29:29 +0100 (Tue, 08 Nov 2005)
+New Revision: 17
+
+Modified:
+   trunk/palam/docs/proposal.txt
+Log:
+some more of the proposal
+
+Modified: trunk/palam/docs/proposal.txt
+===================================================================
+--- trunk/palam/docs/proposal.txt	2005-11-08 11:05:51 UTC (rev 16)
++++ trunk/palam/docs/proposal.txt	2005-11-08 11:29:29 UTC (rev 17)
+@@ -47,12 +47,44 @@
+ more non-technical people will be encouraged to hack at and contribute to
+ the project.
+ 
++Workflow:
+ 
++The Application developer registers an application and uploads the POT file.
++He also gives the file version. The application will treat each version of the
++PO file as a different file. The developer may opt for automatic
++translation, in which case all the strings available in the database will
++be translated into all the languages available and saved as drafts.
++Similarly, any translation by a non authorised translator will also be
++saved as drafts as and when they are done. The developer, and anyone
++authorised by him can approve of drafts, wholly or partially and merge them
++into the official version. This official version will be presented to all
++translators who wish to translate the file wholly or partially.
+ 
++All translations of strings in all official versions will be added to the
++database. In case of more than one translation of a string into a given
++lanuguage, all translations will be added and it is left to individual
++developers to choose the one they want.
+ 
++There will be a facility for experts in particular languages to review the
++database and cull out obviously incorrect translations, correct spellings,
++mark any one translation as 'preferred' and remove almost identical duplic
++ates. 
+ 
++Translators will be able to use the online interface as well as upload
++translations made offline. Submitting translations by email will also be
++catered to, but this will not have an automatic interface. The developer
++will have to accept responsibility for accepting email submissions and the
++translator will have to get the consent of the developer to submit my
++email.
+ 
+ 
++
++
++
++
++
++
++
+ * Statistics -- Must have  
+ 
+ * Online Review -- Must have
+
+
+
+From lawgon at berlios.de  Tue Nov  8 12:47:24 2005
+From: lawgon at berlios.de (kenneth gonsalves at BerliOS)
+Date: Tue, 8 Nov 2005 12:47:24 +0100
+Subject: [Palam-SVN] r18 - trunk/palam/docs
+Message-ID: <200511081147.jA8BlOnX010112@sheep.berlios.de>
+
+Author: lawgon
+Date: 2005-11-08 12:47:18 +0100 (Tue, 08 Nov 2005)
+New Revision: 18
+
+Modified:
+   trunk/palam/docs/proposal.txt
+Log:
+some more of the proposal
+
+Modified: trunk/palam/docs/proposal.txt
+===================================================================
+--- trunk/palam/docs/proposal.txt	2005-11-08 11:29:29 UTC (rev 17)
++++ trunk/palam/docs/proposal.txt	2005-11-08 11:47:18 UTC (rev 18)
+@@ -77,14 +77,8 @@
+ translator will have to get the consent of the developer to submit my
+ email.
+ 
++other bits left for GNUlinuxer to do:
+ 
+-
+-
+-
+-
+-
+-
+-
+ * Statistics -- Must have  
+ 
+ * Online Review -- Must have
+@@ -97,10 +91,7 @@
+   files of different version as separate files. So in a way, the VC will
+   be at a higher level than the app itself
+ 
+-* User Profiles -- Unnecessary
+ 
+-* Management Console -- Not needed as volunteers will be able to take up
+-  work via the stats page itself
+ 
+ * Downloads -- A way to filter translations according to language,
+   product, etc. and download tarballs
+@@ -113,6 +104,32 @@
+ 
+ * TODO -- Think of more features to put in  
+ 
++Schedule:
+ 
++We will have a server up and running with a basic version of the
++application within a month of starting the project. Working with active
++developers and translators, the application will be fine-tuned over a
++period of 6 months to a year. 
+ 
++Funding:
+ 
++1. Hosting space with root access along with subversion, python, apache2,
++mod_python, postgresql and a few GB of diskspace - $400 per year is the
++going rate.
++
++BG - add some stuff here
++
++Developers:
++
++The developers are:
++
++1. BG - resume here
++
++2. Kenneth Gonsalves: An opensource developer. Resume is http://avsap.org.in
++
++Other developers will be welcome to join the project which will iniitally
++be hosted at berlios.de
++
++
++
++
+
+
+
+From lawgon at berlios.de  Tue Nov  8 13:16:09 2005
+From: lawgon at berlios.de (kenneth gonsalves at BerliOS)
+Date: Tue, 8 Nov 2005 13:16:09 +0100
+Subject: [Palam-SVN] r19 - trunk/palam/docs
+Message-ID: <200511081216.jA8CG9qo022022@sheep.berlios.de>
+
+Author: lawgon
+Date: 2005-11-08 13:16:07 +0100 (Tue, 08 Nov 2005)
+New Revision: 19
+
+Modified:
+   trunk/palam/docs/proposal.txt
+Log:
+some more of the proposal
+
+Modified: trunk/palam/docs/proposal.txt
+===================================================================
+--- trunk/palam/docs/proposal.txt	2005-11-08 11:47:18 UTC (rev 18)
++++ trunk/palam/docs/proposal.txt	2005-11-08 12:16:07 UTC (rev 19)
+@@ -117,6 +117,8 @@
+ mod_python, postgresql and a few GB of diskspace - $400 per year is the
+ going rate.
+ 
++2. Can we ask for a couple of ibooks?
++
+ BG - add some stuff here
+ 
+ Developers:
+
+
+
+From ghoseb at berlios.de  Tue Nov  8 17:30:52 2005
+From: ghoseb at berlios.de (Baishampayan Ghose at BerliOS)
+Date: Tue, 8 Nov 2005 17:30:52 +0100
+Subject: [Palam-SVN] r20 - trunk/palam/docs
+Message-ID: <200511081630.jA8GUqPj008281@sheep.berlios.de>
+
+Author: ghoseb
+Date: 2005-11-08 17:30:52 +0100 (Tue, 08 Nov 2005)
+New Revision: 20
+
+Modified:
+   trunk/palam/docs/proposal.txt
+Log:
+Committing my bits
+
+
+Modified: trunk/palam/docs/proposal.txt
+===================================================================
+--- trunk/palam/docs/proposal.txt	2005-11-08 12:16:07 UTC (rev 19)
++++ trunk/palam/docs/proposal.txt	2005-11-08 16:30:52 UTC (rev 20)
+@@ -1,51 +1,54 @@
+ Proposal for an Integrated Translation Management Application
++-------------------------------------------------------------
+ 
+ Synopsis: 
+ 
+-Translation of open source applications - like open source
+-applications themselves, depend on the whims of would-be translators. There
+-is a need for an application that will both cater to the need of individual
+-translators to 'scratch their itch' and translate as much as they want of
+-portions they want and at the same time allow the application developer to
+-coordinate the efforts of individuals and maintain an adequate level of
+-accuracy and consistency. 
++Translation of free & open source applications - like free & open source
++applications themselves, depend on the whims of would-be
++translators. There is a need for an application that will both cater to
++the need of individual translators to 'scratch their itch' and translate
++as much as they want of portions they want and at the same time allow
++the application developer to coordinate the efforts of individuals and
++maintain an adequate level of accuracy and consistency.
+ 
+-The application should cater to both sporadic or
+-'one-off' online translation efforts and more consistent off-line efforts.
++The application should cater to both sporadic or 'one-off' online
++translation efforts and more consistent off-line efforts.
+ 
+-In addition the application should build a basic database of strings with
+-translations in the languages catered to - and offer either automatic
+-translation of strings already in the database, or hints for already
+-translated strings.
++In addition the application should build a basic database of strings
++with translations in the languages catered to - and offer either
++automatic translation of strings already in the database, or hints for
++already translated strings.
+ 
+ The application should, at a later stage cater to translation of
+ documentation - which has to be served to the translator para or section
+ wise unlike translation of source which is served string by string.
+ 
+ It goes without saying that the application should be free software,
+-multiplatform and multilingual. It is also clear that any such application
+-has to be web based.
++multiplatform and multilingual. It is also clear that any such
++application has to be web based.
+ 
+ Existing efforts:
+ 
+-We have investigated Rosetta, Pootle and Entrans (put the URLs). Rosetta is
+-proprietory software. Pootle, written in python has the idea correct, but
+-it uses a filesystem to store everything and probably wont scale. Entrans
+-uses php and mysql, which we feel are not stable or secure enough for an
+-application of this nature - and from the documentation does not appear to
+-have the comprehensive aims of this project. However elements of it's user
+-interface are good and could be incorporated into this project.
++We have investigated Rosetta [https://launchpad.net/rosetta], Pootle
++[http://pootle.wordforge.org/] and Entrans [http://entrans.sf.net].
++Rosetta is proprietory software. Pootle, written in python has the idea
++correct, but it uses a filesystem to store everything and probably wont
++scale. Entrans uses PHP and MySQL, which we feel are not stable or
++secure enough for an application of this nature - and from the
++documentation does not appear to have the comprehensive aims of this
++project. However elements of it's user interface are good and could be
++incorporated into this project.
+ 
+ Platform:
+ 
+-We propose using the Python scripting language with Postgresql RDBMS as a
+-backend. The webserver will be Apache. We will be using other tools and
+-frameworks not limited to django, subversion, plone and trac for scripting
+-various parts of the project. Both Python and Postgresql are stable, mature and
+-inherently secure and used worldwide on an immense range of products and
+-applications. Further, python being an easy to master scripting language,
+-more non-technical people will be encouraged to hack at and contribute to
+-the project.
++We propose using the Python scripting language with PostgreSQL RDBMS as
++a backend. The webserver will be Apache. We will be using other tools
++and frameworks not limited to Django, Subversion, Plone and Trac for
++scripting various parts of the project. Both Python and PostgreSQL are
++stable, mature and inherently secure and used worldwide on an immense
++range of products and applications. Further, python being an easy to
++master scripting language, more non-technical people will be encouraged
++to hack at and contribute to the project.
+ 
+ Workflow:
+ 
+@@ -74,60 +77,104 @@
+ translations made offline. Submitting translations by email will also be
+ catered to, but this will not have an automatic interface. The developer
+ will have to accept responsibility for accepting email submissions and the
+-translator will have to get the consent of the developer to submit my
++translator will have to get the consent of the developer to submit by
+ email.
+ 
+-other bits left for GNUlinuxer to do:
++Proposed Features:
++------------------
+ 
+-* Statistics -- Must have  
++Statistics:
+ 
+-* Online Review -- Must have
++The application will provide detailed statistics of the number of
++strings translated. This can also be filtered according to the project,
++language, translator as well as different project versions.
+ 
+-* Consistency Checking -- Must have
++Online Review:
+ 
+-* Version Control -- A basic form of VC should be there, nothing too
+-  ambitious, but there will be a way to mark a PO file to be a part of x
+-  version of y app while uploading. The app will in any case treat PO
+-  files of different version as separate files. So in a way, the VC will
+-  be at a higher level than the app itself
++An system for reviewing the translations online will be present so as to
++help trusted reviewers to just login to the system and review the
++translations. 
+ 
++Consistency Checking:
+ 
++The application will automatically check the consistency of the
++translations and will report errors if any for fixes. In case of a
++broken translation, the official version will be switched to the last
++sane translation until the broken [but newer] version is fixed and
++committed.
+ 
+-* Downloads -- A way to filter translations according to language,
+-  product, etc. and download tarballs
++Version Control:
+ 
+-* Minor Points
+-  -- Translated UI
+-  -- Extensive Online Documentation
+-  -- Email Interface
+-  -- Screenshot Gallery (?)
++A basic form of version control will be present in the app. It will be
++able to track translations of the same application across different
++versions and will also allow merging & diffing between the
++versions. Also, it will make sure translations are never lost.
+ 
+-* TODO -- Think of more features to put in  
++Downloads:
+ 
++Translators will be able to download tarballs of translated files
++according to projects, project versions and languages. This will help in
++case they want to translate offline.
++
++Translated UI:
++
++The UI of the application itself will be translated into various indian
++langauges so as to allow translators use the application in their own
++native language.
++
++Extensive Online Documentation:
++
++Documentation is very important in a project and we will provide an
++extensive documentation for the application so that it's easy for the
++translators / admins to pick it up and start using.
++
++Email Interface:
++
++As already pointed out, we intend to provide an Email interface to the
++application so that authenticated translators can recieve untranslated
++strings and send translations by Email.
++
++Screenshot Gallery:
++
++There will be a screenhot gallery which will have screenshots of various
++translated applications to inspire more people to join the i18n / l10n
++scene as well as to show the status of translations for a particular
++language / project.
++
+ Schedule:
+ 
+ We will have a server up and running with a basic version of the
+ application within a month of starting the project. Working with active
+ developers and translators, the application will be fine-tuned over a
+-period of 6 months to a year. 
++period of 6 months to a year.
+ 
+ Funding:
+ 
+-1. Hosting space with root access along with subversion, python, apache2,
+-mod_python, postgresql and a few GB of diskspace - $400 per year is the
+-going rate.
++1. Hosting space with root access along with Subversion, Python, Apache
++   mod_python, PostgreSQL and a few GB of diskspace - $400 per year is
++   the going rate.
+ 
+-2. Can we ask for a couple of ibooks?
++2. We'll initially require 6 months funding to create the application
++   with the most important features. Preferably we'd like to receive an
++   additional 6 months of funding to incorporate more advanced features
++   like machine translation and other nifty things as well as doing a
++   lot of bug fixing and writing test cases, etc.
+ 
+-BG - add some stuff here
+-
+ Developers:
+ 
+ The developers are:
+ 
+-1. BG - resume here
++1. Baishampayan Ghose: A Computer Sci. & Engg. Student & a Free Software
++   developer. I am an experienced Python developer and a active member
++   of the Free Software community. I have some i18n experience while
++   leading the Bengali translation effort of Debian-Installer &
++   Drupal. I am also a member of the Free Software Foundation of India
++   working committee.
++   Email - b.ghose at gnu.org.in
+ 
+-2. Kenneth Gonsalves: An opensource developer. Resume is http://avsap.org.in
++2. Kenneth Gonsalves: An Free & Open source Developer. Resume is
++   http://avsap.org.in
++   Email - lawgon at thenilgiris.com
+ 
+ Other developers will be welcome to join the project which will iniitally
+ be hosted at berlios.de
+
+
+
+From ghoseb at berlios.de  Wed Nov  9 07:42:46 2005
+From: ghoseb at berlios.de (Baishampayan Ghose at BerliOS)
+Date: Wed, 9 Nov 2005 07:42:46 +0100
+Subject: [Palam-SVN] r21 - trunk/palam/docs
+Message-ID: <200511090642.jA96gkhb008676@sheep.berlios.de>
+
+Author: ghoseb
+Date: 2005-11-09 07:42:39 +0100 (Wed, 09 Nov 2005)
+New Revision: 21
+
+Modified:
+   trunk/palam/docs/proposal.txt
+Log:
+Just a simple fix
+
+
+Modified: trunk/palam/docs/proposal.txt
+===================================================================
+--- trunk/palam/docs/proposal.txt	2005-11-08 16:30:52 UTC (rev 20)
++++ trunk/palam/docs/proposal.txt	2005-11-09 06:42:39 UTC (rev 21)
+@@ -150,15 +150,15 @@
+ 
+ Funding:
+ 
+-1. Hosting space with root access along with Subversion, Python, Apache
+-   mod_python, PostgreSQL and a few GB of diskspace - $400 per year is
+-   the going rate.
+-
+-2. We'll initially require 6 months funding to create the application
++1. We'll initially require 6 months funding to create the application
+    with the most important features. Preferably we'd like to receive an
+    additional 6 months of funding to incorporate more advanced features
+    like machine translation and other nifty things as well as doing a
+    lot of bug fixing and writing test cases, etc.
++   
++2. Hosting space with root access along with Subversion, Python, Apache
++   mod_python, PostgreSQL and a few GB of diskspace - $400 per year is
++   the going rate.   
+ 
+ Developers:
+ 
+
+
+
+From lawgon at berlios.de  Wed Nov  9 08:33:23 2005
+From: lawgon at berlios.de (kenneth gonsalves at BerliOS)
+Date: Wed, 9 Nov 2005 08:33:23 +0100
+Subject: [Palam-SVN] r22 - trunk/palam/docs
+Message-ID: <200511090733.jA97XNX0027518@sheep.berlios.de>
+
+Author: lawgon
+Date: 2005-11-09 08:33:17 +0100 (Wed, 09 Nov 2005)
+New Revision: 22
+
+Modified:
+   trunk/palam/docs/proposal.txt
+Log:
+spelling
+
+Modified: trunk/palam/docs/proposal.txt
+===================================================================
+--- trunk/palam/docs/proposal.txt	2005-11-09 06:42:39 UTC (rev 21)
++++ trunk/palam/docs/proposal.txt	2005-11-09 07:33:17 UTC (rev 22)
+@@ -23,7 +23,7 @@
+ documentation - which has to be served to the translator para or section
+ wise unlike translation of source which is served string by string.
+ 
+-It goes without saying that the application should be free software,
++It goes without saying that the application will be free software,
+ multiplatform and multilingual. It is also clear that any such
+ application has to be web based.
+ 
+@@ -172,7 +172,7 @@
+    working committee.
+    Email - b.ghose at gnu.org.in
+ 
+-2. Kenneth Gonsalves: An Free & Open source Developer. Resume is
++2. Kenneth Gonsalves: A Free & Open source Developer. Resume is
+    http://avsap.org.in
+    Email - lawgon at thenilgiris.com
+ 
+
+
+
+From ghoseb at berlios.de  Wed Nov  9 09:46:14 2005
+From: ghoseb at berlios.de (Baishampayan Ghose at BerliOS)
+Date: Wed, 9 Nov 2005 09:46:14 +0100
+Subject: [Palam-SVN] r23 - trunk/palam/docs
+Message-ID: <200511090846.jA98kEJ4000688@sheep.berlios.de>
+
+Author: ghoseb
+Date: 2005-11-09 09:46:11 +0100 (Wed, 09 Nov 2005)
+New Revision: 23
+
+Modified:
+   trunk/palam/docs/proposal.txt
+Log:
+Added the Roadmap, etc.
+
+
+Modified: trunk/palam/docs/proposal.txt
+===================================================================
+--- trunk/palam/docs/proposal.txt	2005-11-09 07:33:17 UTC (rev 22)
++++ trunk/palam/docs/proposal.txt	2005-11-09 08:46:11 UTC (rev 23)
+@@ -23,7 +23,7 @@
+ documentation - which has to be served to the translator para or section
+ wise unlike translation of source which is served string by string.
+ 
+-It goes without saying that the application will be free software,
++It goes without saying that the application should be free software,
+ multiplatform and multilingual. It is also clear that any such
+ application has to be web based.
+ 
+@@ -148,13 +148,58 @@
+ developers and translators, the application will be fine-tuned over a
+ period of 6 months to a year.
+ 
++Proposed Roadmap:
++
++01 Month:
++   * A working model should be ready.
++
++03 Months:
++   * The first Beta release.
++
++06 Months:
++   * The most important features would be integrated into the app.
++   * Beta 2 release.
++
++08 Months:
++   * More Features.
++   * Bug fixes and UI translations into at least 3 languages.
++   * First Release Candidate release.
++
++10 Months:
++   * More features and bug fixes.
++   * More UI Translations and documentation.
++   * Second Release Candidate release.
++
++11 Months:
++   * Feature freeze.
++   * Big fixes, UI translations.
++   * More documentation.
++   * Third Release Candidate release.
++
++12 Months:
++   * More bug fixing.
++   * Clearing up Docs & UI translations.
++   * First stable release.
++
++Possible benefits & downfalls:
++Pros:
++  * blah blah
++  * foo
++
++Cons:
++  * blah blah
++  * foo
++
++Lawgon -- add some masala here  
++  
+ Funding:
+ 
+ 1. We'll initially require 6 months funding to create the application
+    with the most important features. Preferably we'd like to receive an
+    additional 6 months of funding to incorporate more advanced features
+    like machine translation and other nifty things as well as doing a
+-   lot of bug fixing and writing test cases, etc.
++   lot of bug fixing, achieve full UI translations and writing test
++   cases, etc.
+    
+ 2. Hosting space with root access along with Subversion, Python, Apache
+    mod_python, PostgreSQL and a few GB of diskspace - $400 per year is
+@@ -172,13 +217,9 @@
+    working committee.
+    Email - b.ghose at gnu.org.in
+ 
+-2. Kenneth Gonsalves: A Free & Open source Developer. Resume is
++2. Kenneth Gonsalves: An Free & Open source Developer. Resume is
+    http://avsap.org.in
+    Email - lawgon at thenilgiris.com
+ 
+-Other developers will be welcome to join the project which will iniitally
++Other developers will be welcome to join the project which will initially
+ be hosted at berlios.de
+-
+-
+-
+-
+
+
+
+From lawgon at berlios.de  Wed Nov  9 11:52:31 2005
+From: lawgon at berlios.de (kenneth gonsalves at BerliOS)
+Date: Wed, 9 Nov 2005 11:52:31 +0100
+Subject: [Palam-SVN] r24 - trunk/palam/docs
+Message-ID: <200511091052.jA9AqVQ5031698@sheep.berlios.de>
+
+Author: lawgon
+Date: 2005-11-09 11:52:21 +0100 (Wed, 09 Nov 2005)
+New Revision: 24
+
+Modified:
+   trunk/palam/docs/proposal.txt
+Log:
+masala
+
+Modified: trunk/palam/docs/proposal.txt
+===================================================================
+--- trunk/palam/docs/proposal.txt	2005-11-09 08:46:11 UTC (rev 23)
++++ trunk/palam/docs/proposal.txt	2005-11-09 10:52:21 UTC (rev 24)
+@@ -151,22 +151,25 @@
+ Proposed Roadmap:
+ 
+ 01 Month:
+-   * A working model should be ready.
++   * Database structure and translation user interface - basic functionality
++   * One language
++   * Beta 1 release
+ 
+ 03 Months:
+-   * The first Beta release.
++   * Complete admin and user interface added
++   * Any number of languages
+ 
+ 06 Months:
+-   * The most important features would be integrated into the app.
++   * Handling of diffs, statistics, reports - complete functionality
+    * Beta 2 release.
+ 
+ 08 Months:
+-   * More Features.
++   * Addition of email interface and interface for translation of documents
+    * Bug fixes and UI translations into at least 3 languages.
+    * First Release Candidate release.
+ 
+ 10 Months:
+-   * More features and bug fixes.
++   * Factoring
+    * More UI Translations and documentation.
+    * Second Release Candidate release.
+ 
+@@ -181,16 +184,11 @@
+    * Clearing up Docs & UI translations.
+    * First stable release.
+ 
+-Possible benefits & downfalls:
+-Pros:
+-  * blah blah
+-  * foo
++The timeline is dependent on the amount of response we get from testers and
++and translators - features will be added and modified in response to the
++feedback.
+ 
+-Cons:
+-  * blah blah
+-  * foo
+ 
+-Lawgon -- add some masala here  
+   
+ Funding:
+ 
+
+
+
